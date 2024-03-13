@@ -21,6 +21,7 @@ RUN apt-get update \
     && apt-get install -y git python3 python-is-python3
 
 WORKDIR /app
+ENV ASPNETCORE_URLS=http://+:5000
 COPY --from=build /app ./
 
 EXPOSE 5000
